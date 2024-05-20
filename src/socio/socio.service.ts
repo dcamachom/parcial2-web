@@ -49,7 +49,7 @@ export class SocioService {
 
     checkEntryValues(socio:SocioEntity){
         
-        if (!socio.correo || socio.correo==="" || socio.correo.includes('@')){
+        if (!socio.correo || socio.correo==="" || !socio.correo.includes('@')){
             throw new BusinessLogicException("mail is null or invalid", BusinessError.BAD_REQUEST);
         }
         if (!socio.fechaNacimiento){

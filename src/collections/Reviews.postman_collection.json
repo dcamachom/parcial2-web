@@ -1,0 +1,784 @@
+{
+	"info": {
+		"_postman_id": "e5f62c9f-a7b6-4419-97fa-c047d0e1a3ca",
+		"name": "Reviews",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25525239",
+		"_collection_link": "https://creatupc.postman.co/workspace/NetGather~daabc115-fb03-412c-9707-a9f4535a2be2/collection/25525239-e5f62c9f-a7b6-4419-97fa-c047d0e1a3ca?action=share&source=collection_link&creator=25525239"
+	},
+	"item": [
+		{
+			"name": "Crear una reseña",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"value\":5,\r\n    \"comment\": \"A great host!\",\r\n    \"author\":{\r\n        \"id\":{{\"author_id\"}}\r\n    },\r\n    \"host\":{\r\n        \"id\":{{host_id}}\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/users/{{user_id}}/reviews",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"users",
+						"{{user_id}}",
+						"reviews"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Crear una reseña",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"value\":5,\r\n    \"comment\": \"A great host!\",\r\n    \"author\":{\r\n        \"id\":{{\"author_id\"}}\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/users/{{user_id}}/reviews",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users",
+								"{{user_id}}",
+								"reviews"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"value\":5,\r\n    \"comment\": \"A great host!\",\r\n    \"author\":{\r\n        \"id\":{{\"author_id\"}}\r\n    },\r\n    \"host\":{\r\n        \"id\":{{host_id}}\r\n    }\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Crear una reseña con calificación negativa",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"value\":-1,\r\n    \"comment\": \"A great host!\",\r\n    \"author\":{\r\n        \"id\":{{\"author_id\"}}\r\n    },\r\n    \"host\":{\r\n        \"id\":{{host_id}}\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/users/{{user_id}}/reviews",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"users",
+						"{{user_id}}",
+						"reviews"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Crear una reseña con calificación negativa",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"value\":-1,\r\n    \"comment\": \"A great host!\",\r\n    \"author\":{\r\n        \"id\":{{\"author_id\"}}\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/users/{{user_id}}/reviews",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users",
+								"{{user_id}}",
+								"reviews"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"statusCode\": 400,\r\n    \"message\": \"Value is invalid, null or empty\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Crear una reseña con calificación >5",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"value\":6,\r\n    \"comment\": \"A great host!\",\r\n    \"author\":{\r\n        \"id\":{{\"author_id\"}}\r\n    },\r\n    \"host\":{\r\n        \"id\":{{host_id}}\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/users/{{user_id}}/reviews",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"users",
+						"{{user_id}}",
+						"reviews"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Crear una reseña con calificación >5",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"value\":6,\r\n    \"comment\": \"A great host!\",\r\n    \"author\":{\r\n        \"id\":{{\"author_id\"}}\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/users/{{user_id}}/reviews",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users",
+								"{{user_id}}",
+								"reviews"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 400,\n    \"message\": \"Value is invalid, null or empty\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Crear una reseña con comentario null",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"value\":5,\r\n    \"comment\": null,\r\n    \"author\":{\r\n        \"id\":{{\"author_id\"}}\r\n    },\r\n    \"host\":{\r\n        \"id\":{{host_id}}\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/users/{{user_id}}/reviews",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"users",
+						"{{user_id}}",
+						"reviews"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Crear una reseña con comentario null",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"value\":5,\r\n    \"comment\": null,\r\n    \"author\":{\r\n        \"id\":{{\"author_id\"}}\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/users/{{user_id}}/reviews",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users",
+								"{{user_id}}",
+								"reviews"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 400,\n    \"message\": \"Comment is invalid, null or empty\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Crear una reseña con comentario vacio",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"value\":5,\r\n    \"comment\": \"\",\r\n    \"author\":{\r\n        \"id\":{{\"author_id\"}}\r\n    },\r\n    \"host\":{\r\n        \"id\":{{host_id}}\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/users/{{user_id}}/reviews",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"users",
+						"{{user_id}}",
+						"reviews"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Crear una reseña con comentario vacio",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"value\":5,\r\n    \"comment\": \"\",\r\n    \"author\":{\r\n        \"id\":{{\"author_id\"}}\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/users/{{user_id}}/reviews",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users",
+								"{{user_id}}",
+								"reviews"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"statusCode\": 400,\r\n    \"message\": \"Comment is invalid, null or empty\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Crear una reseña con autor nulo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"value\":5,\r\n    \"comment\": \"A great host!\",\r\n    \"author\":{\r\n        \"id\":null\r\n    },\r\n    \"host\":{\r\n        \"id\":{{host_id}}\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/users/{{user_id}}/reviews",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"users",
+						"{{user_id}}",
+						"reviews"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Crear una reseña con autor nulo",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"value\":5,\r\n    \"comment\": \"A great host!\",\r\n    \"author\":{\r\n        \"id\":null\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/users/{{user_id}}/reviews",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users",
+								"{{user_id}}",
+								"reviews"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"statusCode\": 400,\r\n    \"message\": \"Invalid author\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Crear reseña con autor invalido",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"value\":5,\r\n    \"comment\": \"A great host!\",\r\n    \"author\":{\r\n        \"id\":0\r\n    },\r\n    \"host\":{\r\n        \"id\":{{host_id}}\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/users/{{user_id}}/reviews",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"users",
+						"{{user_id}}",
+						"reviews"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Crear reseña con autor invalido",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"value\":5,\r\n    \"comment\": \"A great host!\",\r\n    \"author\":{\r\n        \"id\":0\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/users/{{user_id}}/reviews",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users",
+								"{{user_id}}",
+								"reviews"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"Author not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Crear reseña con host invalido",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"value\":5,\r\n    \"comment\": \"A great host!\",\r\n    \"author\":{\r\n        \"id\":{{autor_id}}\r\n    },\r\n    \"host\":{\r\n        \"id\":0\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/users/{{user_id}}/reviews",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"users",
+						"{{user_id}}",
+						"reviews"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Crear reseña con host invalido",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"value\":5,\r\n    \"comment\": \"A great host!\",\r\n    \"author\":{\r\n        \"id\":{{autor_id}}\r\n    },\r\n    \"host\":{\r\n        \"id\":0\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/users/{{user_id}}/reviews",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users",
+								"{{user_id}}",
+								"reviews"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"statusCode\": 404,\r\n    \"message\": \"Host not found\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Crear reseña con anfritrion nulo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"value\":5,\r\n    \"comment\": \"A great host!\",\r\n    \"author\":{\r\n        \"id\":{{autor_id}}\r\n    },\r\n    \"host\":{\r\n        \"id\":null\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/users/{{user_id}}/reviews",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"users",
+						"{{user_id}}",
+						"reviews"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Crear reseña con anfritrion nulo",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"value\":5,\r\n    \"comment\": \"A great host!\",\r\n    \"author\":{\r\n        \"id\":{{autor_id}}\r\n    },\r\n    \"host\":{\r\n        \"id\":null\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/users/{{user_id}}/reviews",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users",
+								"{{user_id}}",
+								"reviews"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"statusCode\": 404,\r\n    \"message\": \"Invalid Host\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Reseña por id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"value\":5,\r\n    \"comment\": \"A great host!\",\r\n    \"author\":{\r\n        \"id\":{{\"author_id\"}}\r\n    },\r\n    \"host\":{\r\n        \"id\":{{host_id}}\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/reviews/{{reviewId}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"reviews",
+						"{{reviewId}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Reseña por id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/reviews/{{reviewId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"reviews",
+								"{{reviewId}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"value\":5,\r\n    \"comment\": \"A great host!\",\r\n    \"author\":{\r\n        \"id\":{{\"author_id\"}}\r\n    },\r\n    \"host\":{\r\n        \"id\":{{host_id}}\r\n    }\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Reseña con id invalido",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"value\":5,\r\n    \"comment\": \"A great host!\",\r\n    \"author\":{\r\n        \"id\":{{\"author_id\"}}\r\n    },\r\n    \"host\":{\r\n        \"id\":{{host_id}}\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/reviews/0",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"reviews",
+						"0"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Reseña con id invalido",
+					"originalRequest": {
+						"method": "GET",
+						"header": []
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "    {\r\n    \"statusCode\": 404,\r\n    \"message\": \"Review not found\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener todas las reseñas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/reviews",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"reviews"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener todas las reseñas",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/reviews",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"reviews"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"value\":5,\r\n    \"comment\": \"A great host!\",\r\n    \"author\":{\r\n        \"id\":{{autor_id}}\r\n    },\r\n    \"host\":{\r\n        \"id\":{{host_id}}\r\n    }\r\n},\r\n{\r\n    \"value\":4,\r\n    \"comment\": \"I liked the event host!\",\r\n    \"author\":{\r\n        \"id\":{{autor_id}}\r\n    },\r\n    \"host\":{\r\n        \"id\":{{host_id}}\r\n    }\r\n},\r\n{\r\n    \"value\":2,\r\n    \"comment\": \"Not my type of event\",\r\n    \"author\":{\r\n        \"id\":{{autor_id}}\r\n    },\r\n    \"host\":{\r\n        \"id\":{{host_id}}\r\n    }\r\n}"
+				}
+			]
+		}
+	]
+}

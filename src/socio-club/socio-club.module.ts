@@ -1,4 +1,7 @@
 import { Module } from '@nestjs/common';
+import { SocioClubController } from './socio-club.controller';
 
-@Module({})
+@Module({
+  controllers: [SocioClubController]
+})
 export class SocioClubModule {}
